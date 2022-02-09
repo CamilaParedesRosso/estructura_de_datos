@@ -9,6 +9,6 @@ void main() {
 	pi=3.141516;
 	cout<<"Ingrese el valor del radio: "; cin>>radio;
 	area=pi*(radio*radio);
-	cout<<"El área del circulo es: "<<area<<endl;
+	cout<<"El area del circulo es: "<<area<<endl;
 	getch();
 }
