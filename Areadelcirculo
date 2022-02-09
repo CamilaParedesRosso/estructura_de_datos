@@ -5,7 +5,8 @@
 using namespace std;
 
 void main() {
-	float radio, pi=3.141516,area;
+	float radio, pi, area;
+	pi=3.141516;
 	cout<<"Ingrese el valor del radio: "; cin>>radio;
 	area=pi*(radio*radio);
 	cout<<"El área del circulo es: "<<area<<endl;
