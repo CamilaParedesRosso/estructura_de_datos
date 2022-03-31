@@ -1,0 +1,29 @@
+#Ejemplo de uso de cola con clase
+class Stack:
+    def __init__(self):
+        self.items = []
+        
+    def isEmpty(self):
+        return self.items==[]
+    
+    def push(self,item):
+        self.items.append(item)
+    
+    def pop(self):
+        return self.items.pop()
+        
+    def top(self):
+        return self.items[len(self.items)-1]
+    
+    def size(self):
+        return len(self.items)
+    
+s = Stack() #Creando un objeto de la clase Stack - pila
+n=int(input("Digite el valor de n: "))
+for i in range(n):
+    print(s.isEmpty()) #True o False
+    x=int(input("Digite el valor: "))
+    s.push(x) #Adiciona un valor
+
+s.pop() #Saca un valor, el ultimo 
+s.size() #tamaño 
