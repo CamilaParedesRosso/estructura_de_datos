@@ -1,0 +1,82 @@
+import pickle
+import os 
+import a_e
+class Archivo:
+    def guardar(obj, filename):
+        with open(filename, 'a+b') as f:
+            pickle.dump(obj, f, pickle.HIGHEST_PROTOCOL)
+
+    def actualizar(objs, filename):
+        with open(filename, 'wb') as f:
+            pass
+        for obj in objs:
+            Archivo.guardar(obj, filename)
+            
+    def cargar(filename):
+        if not(os.path.exists(filename)):
+            file = open(filename,'w')
+        with open(filename, "rb") as f:
+            while True:
+                try:
+                    yield pickle.load(f)
+                except EOFError:
+                    break
+
+class Publico():
+    def __init__(self):
+        self.publico = ''
+        self.contrasena = ''
+            
+    def existe(self, publico):
+        publico= Archivo.cargar('public.pkl')
+        for publico in public:
+            if publico == publico:
+                return True
+        return False
+        
+    def InicioSesion(self):
+        os.system('cls')
+        self.usuario = input('Usuario: ')
+        self.contrasena = input('Contraseña: ')
+        if not self.existe(self.usuario):
+            Archivo.guardar(self, 'public.pkl')
+            print('iniciando sesion')
+            input('Enter')
+        else: 
+            print('Usuario existente')
+            publico = Archivo.cargar('public.pkl')
+            for usuario in usuarios:
+                if usuario == usuario and contrasena == contrasena:
+                    self.usuario = usuario
+                    self.contrasena = contrasena
+                    self.nombre = nombre
+                    self.correo = correo
+                    self.telefono = telefono
+                    self.genero = genero
+                    print('Iniciando sesion')
+                    input('Enter')
+                    return True   
+            print('Contraseña incorrecta')
+            input('Enter')
+            return False
+
+print('Bienvenid@ a MeetPle')
+print('Organiza salidas con tus amigos o conociendo personas. Planea salidas.')
+input('Enter')
+
+op1=0
+while op1!=5:
+    print('Deseas iniciar como: ')
+    print('1. Publico')
+    print('2. Empresa')
+    print('5. Salir')
+    op1=int(input('Digita la opcion que deseas: '))
+    if op1==1:
+        p=Publico()
+        p.InicioSesion()
+    elif op1==2:
+        e=Empresa()
+        
+    else:
+        input('Digite un opcion valida: ')
+        
